@@ -1,20 +1,21 @@
-﻿using System;
-
-namespace Funcionario
+﻿namespace Funcionario
 {
     public class DadosF
     {
         public string nome;
-        public double salarioLiquido;
+        public double salarioBruto;
         public double desconto;
-        double salarioBruto;
-        double porcentagemDesconto;
 
-        
-        public void CalcularSalarioLiquido()
+        public static double CalcularSalarioLiquido(double salarioBruto, double porcentagemDesconto)
         {
-            desconto = salarioBruto * porcentagemDesconto;
-            salarioLiquido = salarioBruto - desconto;
+            double desconto = salarioBruto * porcentagemDesconto;
+            return salarioBruto - desconto;
+        }
+
+        public static double AumentarSalario(double salarioBruto, double porcentagemAumento)
+        {
+            double aumento = salarioBruto * porcentagemAumento;
+            return salarioBruto + aumento;
         }
     }
 }
