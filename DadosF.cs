@@ -10,13 +10,7 @@ namespace Funcionario
         double salarioBruto;
         double porcentagemDesconto;
 
-        public DadosF(string nome, double salarioBruto, double porcentagemDesconto)
-        {
-            this.nome = nome;
-            this.salarioBruto = salarioBruto;
-            this.porcentagemDesconto = porcentagemDesconto;
-        }
-
+        
         public void CalcularSalarioLiquido()
         {
             desconto = salarioBruto * porcentagemDesconto;
