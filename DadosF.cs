@@ -20,12 +20,17 @@ namespace Funcionario
             return SalarioBruto - (SalarioBruto * Desconto / 100.0);
         }
 
+        public double Bonus()
+        {
+            return SalarioBruto + (SalarioBruto * Desconto / 100.0);
+        }
+
         public override string ToString()
         {
             double salarioLiquido = CalcularSalarioLiquido();
-            return $"Nome: {Nome} \nSalário Bruto: {SalarioBruto} \nDesconto: {Desconto} \nLíquido a receber: {salarioLiquido}";
+            double bonus = Bonus();
+            return $"Nome: {Nome} \nSalário Bruto: {SalarioBruto} \nDesconto: {Desconto} %\nLíquido a receber: {salarioLiquido}\n" +
+                   $"{Nome}, como o seu Bônus, chega ao salário de R$ {bonus}";
         }
-
-        
-        }
+    }
 }

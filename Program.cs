@@ -17,6 +17,7 @@ namespace Funcionario
             DadosF funcionariio = new DadosF(nome, salarioBruto, desconto);
 
             Console.WriteLine(funcionariio.ToString());
+            
         }
     }
 }
