@@ -12,18 +12,11 @@ namespace Funcionario
             Console.WriteLine($"Informe o salário bruto de {nome}");
             double salarioBruto = double.Parse(Console.ReadLine());
             Console.WriteLine("Informe a porcentagem a ser descontada do salário para o IRRF");
-            double porcentagemDesconto = double.Parse(Console.ReadLine()) / 100;
+            double desconto = double.Parse(Console.ReadLine());
 
-            double salarioLiquido = DadosF.CalcularSalarioLiquido(salarioBruto, porcentagemDesconto);
+            DadosF funcionariio = new DadosF(nome, salarioBruto, desconto);
 
-            Console.WriteLine($"Funcionário: {nome}. \n Desconto em folha: {porcentagemDesconto * 100}% \n Total líquido: {salarioLiquido}");
-
-            Console.WriteLine($"\n Informe quantos % de aumento {nome} terá sobre seu salário bruto ");
-            double porcentagemAumento = double.Parse(Console.ReadLine()) / 100;
-
-            double salarioComAumento = DadosF.AumentarSalario(salarioBruto, porcentagemAumento);
-
-            Console.WriteLine($"Funcionário: {nome}. \n Bônus: {porcentagemAumento * 100}% \n Salário Bruto + aumento: {salarioComAumento}");
+            Console.WriteLine(funcionariio.ToString());
         }
     }
 }

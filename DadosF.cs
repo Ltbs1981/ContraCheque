@@ -1,21 +1,31 @@
-﻿namespace Funcionario
+﻿using System;
+
+namespace Funcionario
 {
     public class DadosF
     {
-        public string nome;
-        public double salarioBruto;
-        public double desconto;
+        public string Nome;
+        public double SalarioBruto;
+        public double Desconto;
 
-        public static double CalcularSalarioLiquido(double salarioBruto, double porcentagemDesconto)
+        public DadosF(string nome, double salarioBruto, double desconto)
         {
-            double desconto = salarioBruto * porcentagemDesconto;
-            return salarioBruto - desconto;
+            Nome = nome;
+            SalarioBruto = salarioBruto;
+            Desconto = desconto;
         }
 
-        public static double AumentarSalario(double salarioBruto, double porcentagemAumento)
+        public double CalcularSalarioLiquido()
         {
-            double aumento = salarioBruto * porcentagemAumento;
-            return salarioBruto + aumento;
+            return SalarioBruto - (SalarioBruto * Desconto / 100.0);
         }
-    }
+
+        public override string ToString()
+        {
+            double salarioLiquido = CalcularSalarioLiquido();
+            return $"Nome: {Nome} \nSalário Bruto: {SalarioBruto} \nDesconto: {Desconto} \nLíquido a receber: {salarioLiquido}";
+        }
+
+        
+        }
 }
